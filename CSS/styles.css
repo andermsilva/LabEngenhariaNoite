@@ -1,0 +1,55 @@
+body {
+    font-family: Roboto, Ubuntu;
+    font-size: 0.95rem;
+
+}
+
+main{
+    width: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+nav{
+    display: flex;
+    justify-content:center; 
+    align-items: flex-start
+}
+.title{
+    margin-top:18px;
+    margin-left: 8px;
+    padding: 2px;
+    width:80%;
+    color: #034d57;
+    text-align: center;
+    border:#071b99 1px solid;
+}
+.brdr{
+  border: #071b99 1px solid;
+}
+section{
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.menu{
+    width: fit-content;
+  list-style: none;
+}
+.limenu{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    border-bottom: #14737f 1px solid;
+}
+a{
+    text-decoration: none;
+    color:#071b99;
+    font-weight: bold;
+}
+a:hover{
+    color:#8f0a00;
+
+
+}
