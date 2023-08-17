@@ -53,3 +53,49 @@ a:hover{
 
 
 }
+
+.listOrder{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+  
+}
+input{
+    width: 200px;
+    height: 35px;
+    border-radius: 8px;
+    border: 1px solid #07a4ec;
+    padding-left: 8px;
+    padding-right: 8px;
+    color:#286991;
+    font-size: 1.2rem;
+}
+input:focus{
+    outline: none;
+   
+}
+label{
+    color: #696969;
+    font-weight: 600;
+}
+button{
+    width: 90px;
+    height: 45px;
+    
+    border: 1px solid #012086;
+    border-radius: 8px;
+    background-color: #111df1;
+    color: aliceblue;
+    font-size: 1.1rem;
+}
+
+.item-list{
+    font-size: 1.12rem;
+
+    padding: 5px;
+    border:1px solid #071b99;
+}
+#obrigatorio{
+    color: #dc0f04;
+    font-weight: 600;
+}
