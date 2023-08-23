@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&family=Ubuntu:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <title>Semana 1</title>
+  </head>
+  <body>
+    <main class="mainIdex">
+      <nav>
+        <div class="title">
+          <div class="brdr">
+            <h2>Semana 3</h2>
+          </div>
+        </div>
+      </nav>
+      <br />
+      <section>
+      
+         <div id="date">
+          
+         </div>
+        
+      </section>
+      <br />
+      
+      <a href="index.html"> 🔙 Voltar</a>
+      <br />
+      <a href="../../index.html">Laboratorio de Engenharia de software</a><br />
+    </main>
+<script> 
+
+let d =  new Date();
+d.toLocaleTimeString();
+d.toLocaleTimeString();
+d.toLocaleTimeString();
+let ano = d.getFullYear();
+let mes = d.getMonth();
+let semana = d.getDay();
+let dia = d.getDate();
+let dia_='';
+switch (semana) {
+  case 0:
+      dia_ = "Domingo";
+    break;
+  case 1:
+      dia_ = "Segunda-feira";
+    break;
+  case 2:
+      dia_ = "Terça-feira";
+    break;
+  case 3:
+      dia_ = "Quarta-feira";
+    break;
+  case 4:
+      dia_ = "Quinta-feira";
+    break;
+  case 5:
+      dia_ = "Sexta-feira";
+    break;
+  case 6:
+      dia_ = "Sábado";
+    break;
+
+  default:
+    dia_="não informado";
+
+    break;
+}
+switch (mes) {
+  case 0:
+      m = " Janeiro";
+    break;
+  case 1:
+      m = " Fevereiro";
+    break;
+  case 2:
+      m = " Março";
+    break;
+  case 3:
+      m = " Abril";
+    break;
+  case 4:
+      m = " Maio";
+    break;
+  case 5:
+      m = " Junho";
+    break;
+  case 6:
+      m = " Julho";
+    break;
+  case 7:
+      m = " Agosto";
+    break;
+  case 8:
+      m = " Setembro";
+    break;
+  case 9:
+      m = " Outubro";
+    break;
+  case 10:
+      m = " Novembro";
+    break;
+  case 11:
+      m = " Dezembro";
+    break;
+
+  default:
+    m=" não informado";
+
+    break;
+}
+
+
+if(dia < 10 ){
+ 
+  dia_ += " 0"+dia;
+}else{
+  dia_ += " "+dia;
+}
+
+
+
+
+
+
+console.log(d.toLocaleTimeString());
+console.log(semana);
+
+document.getElementById("date").innerHTML="Ola Mundo"+ dia_+m+" "+ano;
+</script>
+
+  </body>
+</html>
