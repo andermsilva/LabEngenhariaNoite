@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../CSS/styles.css" />
     <title>Semana 1</title>
   </head>
-  <body>
+  <body onload="window.location.reload()">
     <main class="mainIdex">
       <nav>
         <div class="title">
@@ -28,9 +28,9 @@
         </div>
       </nav>
       <br />
-      <section>
+      <section >
       
-         <div id="hora">
+         <div class="item-session" id="hora">
           
          </div>
         
@@ -48,6 +48,9 @@ console.log(d.toLocaleTimeString());
 
 
 document.getElementById("hora").innerHTML= d.toLocaleTimeString();
+
+
+
 </script>
 
   </body>

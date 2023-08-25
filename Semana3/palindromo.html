@@ -33,16 +33,22 @@
           <label for="texto">
             
             <input type="text" id="texto" name="texto">
-          </label>
+          </label>&nbsp;&nbsp;
+          <button id="btn">Verificar</button>
         </div>
         
         <br>
        
-          <button id="btn">Verificar</button>
        
         </section>
-        <div id="resposta"></div>
+        <section class="item-session">
+
+          <div id="resposta"></div>
+        </section>
       <br />
+      <a href="index.html"> 🔙 Voltar</a>
+      <br />
+
       <a href="../../index.html">Laboratorio de Engenharia de software</a><br />
     </main>
   
@@ -51,24 +57,26 @@
     let invert="";
     
   document.getElementById("btn").addEventListener("click",()=>{ 
-  
+    document.getElementById("resposta").innerHTML = "";
       txt = document.getElementById("texto").value;
 
      txt = txt.replace(" ","");
    console.log(txt);
      invert = txt.split("").reverse().join("");
 
-     if(invert == txt){
+     if(invert.toLocaleLowerCase() == txt.toLocaleLowerCase()){
        document.getElementById("resposta").innerHTML = " O texto é Palindromo "+ txt+" - "+invert;
+       document.getElementById("resposta").setAttribute("class","item-certo");
       }else{
-       alert("!");
+        
+        document.getElementById("resposta").innerHTML = " O texto não é Palindromo "+ txt;
+        document.getElementById("resposta").setAttribute("class","item-error");
 
      }
    
   });
  
 </script>
--
 
   </body>
 </html>
