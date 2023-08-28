@@ -32,7 +32,7 @@
                
           <label for="texto">
             
-            <input type="text" id="texto" name="texto">
+            <input type="text" id="texto" name="texto" onfocus="limpar()">
           </label>&nbsp;&nbsp;
           <button id="btn">Verificar</button>
         </div>
@@ -41,6 +41,7 @@
        
        
         </section>
+        <br>
         <section class="item-session">
 
           <div id="resposta"></div>
@@ -55,7 +56,12 @@
 <script> 
     let txt ="";
     let invert="";
-    
+    function limpar(){
+
+      document.getElementById("resposta").innerHTML = "";
+      document.getElementById("resposta").setAttribute("class","");
+
+    }
   document.getElementById("btn").addEventListener("click",()=>{ 
     document.getElementById("resposta").innerHTML = "";
       txt = document.getElementById("texto").value;
@@ -65,11 +71,11 @@
      invert = txt.split("").reverse().join("");
 
      if(invert.toLocaleLowerCase() == txt.toLocaleLowerCase()){
-       document.getElementById("resposta").innerHTML = " O texto é Palindromo "+ txt+" - "+invert;
+       document.getElementById("resposta").innerHTML = " O texto é Palindromo '"+ txt+" "+invert+"'";
        document.getElementById("resposta").setAttribute("class","item-certo");
       }else{
         
-        document.getElementById("resposta").innerHTML = " O texto não é Palindromo "+ txt;
+        document.getElementById("resposta").innerHTML = " O texto não é Palindromo '"+ txt+"'";
         document.getElementById("resposta").setAttribute("class","item-error");
 
      }

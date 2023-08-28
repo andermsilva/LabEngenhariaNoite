@@ -28,10 +28,9 @@
         </div>
       </nav>
       <br />
-      <section>
+      <section class="data">
       
          <div id="date">
-          
          </div>
         
       </section>
@@ -140,7 +139,8 @@ if(dia < 10 ){
 console.log(d.toLocaleTimeString());
 console.log(semana);
 
-document.getElementById("date").innerHTML="Ola Mundo"+ dia_+m+" "+ano;
+document.getElementById("date").innerHTML="Data: "+ dia_+m+" "+ano;
+document.getElementById("date").setAttribute("class","item-certo");
 </script>
 
   </body>

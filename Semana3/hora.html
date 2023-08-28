@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../CSS/styles.css" />
     <title>Semana 1</title>
   </head>
-  <body onload="window.location.reload()">
+  <body>
     <main class="mainIdex">
       <nav>
         <div class="title">
@@ -28,12 +28,8 @@
         </div>
       </nav>
       <br />
-      <section >
-      
-         <div class="item-session" id="hora">
-          
-         </div>
-        
+      <section class="relogio">
+        <div class="item-session" id="hora"></div>
       </section>
       <br />
       <br />
@@ -41,17 +37,15 @@
       <br />
       <a href="../../index.html">Laboratorio de Engenharia de software</a><br />
     </main>
-<script> 
-
-let d =  new Date();
-console.log(d.toLocaleTimeString());
-
-
-document.getElementById("hora").innerHTML= d.toLocaleTimeString();
-
-
-
-</script>
-
+    <script>
+      function getHours() {
+        let d = new Date();
+        console.log(d.toLocaleTimeString());
+        document.getElementById("hora").innerHTML = d.toLocaleTimeString();
+      }
+      setInterval(() => {
+          getHours();
+       }, 1000);
+    </script>
   </body>
 </html>
