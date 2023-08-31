@@ -167,7 +167,26 @@ button {
 }
 .item-form{
   
-
+width: 60%;
     display: flex;
     padding: 15px;
+}
+
+.mainIndex{
+    margin-top: 10px;
+    display: flex;
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-around;
+}
+
+table{
+  width: 90%;
+    border:1px solid;
+    height: 30px;
+   
+}
+#escolha{
+    margin-top: 20pxpx;
 }
