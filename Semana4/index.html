@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&family=Ubuntu:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="../CSS/styles.css" />
+  <link href="../CSS/bootstrap-5.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <title>Semana 4</title>
+</head>
+
+<body>
+  <main>
+    <nav>
+      <div class="title">
+        <div class="brdr">
+          <h2>Semana 4</h2>
+        </div>
+      </div>
+    </nav>
+    <div class="mainIndex">
+      <section class="item-form">
+        <form>
+          <div class="input-form">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" placeholder="Nome Completo">
+
+            <label for="email" class="form-label">email</label>
+            <input type="email" class="form-control" id="email" placeholder="email">
+          </div>
+          <div class="input-form">
+            
+            <label for="datanasc" class="form-label">Data Nascimento</label>
+            <input type="date" class="form-control" id="datanasc" placeholder="Data nascimento">
+
+            <input class="form-check-input" type="radio" name="tipo" id="prof" value="prof">
+            <label class="form-check-label" for="tipo">
+              Professor
+            </label>
+            &nbsp; &nbsp;
+
+            <input class="form-check-input" type="radio" id="aluno" name="tipo" value="aluno">
+            <label class="form-check-label" for="flexRadioCheckedDisabled">
+              Aluno
+            </label>
+          </div>
+          <div class="input-form">
+            <label for="fixo" class="form-label">Telefone fixo</label>
+            <input type="text" class="form-control" id="fixo">
+            <label for="cel" class="form-label">Telefone celular</label>
+            <input type="text" class="form-control" id="cel">
+          </div>
+          <hr>
+          <br>
+          <div id="escolha"></div>
+
+          <br>
+
+          <button type="button" class="btn btn-primary" id="btn">Enviar</button>
+          <button type="reset" class="btn btn-secondary" id="btnRst">Limpar</button>
+        </form>
+      </section>
+
+      <br />
+      <br />
+      <section class="tb" id="result">
+
+      </section>
+    </div>
+    <a href="../index.html">Laboratorio de Engenharia de software</a><br />
+  </main>
+
+  <script src="../CSS/bootstrap-5.3.1/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+    function Pessoa() {
+      let nome;
+      let email;
+      let dtNasc;
+      let fixo;
+      let celular;
+
+      this.setNome = function (vNome) {
+        this.nome = vNome;
+      }
+      this.getNome = function () {
+        return this.nome;
+      }
+
+      this.setEmail = function (em) {
+        this.email = em;
+      }
+      this.getEmail = function () {
+        return this.email;
+      }
+      this.setDtNasc = function (dt) {
+        this.dtNasc = dt;
+      }
+      this.getDtNasc = function () {
+        return this.dtNasc;
+      }
+      this.setFixo = function (fx) {
+        this.fixo = fx;
+      }
+      this.getFixo = function () {
+        return this.fixo;
+      }
+      this.setCelular = function (cel) {
+        this.celular = cel;
+      }
+      this.getCeluar = function () {
+        return this.celular;
+      }
+    }
+
+
+    // Define a classe Estudante
+    function Aluno() {
+      // Chama o método pai
+      Pessoa.call(this);
+      let matricula;
+      let curso;
+
+      this.setMatricula = function (mt) {
+        this.matricula = mt;
+      }
+      this.getMatricula = function () {
+        return this.matricula;
+      }
+
+      this.setCurso = function (crs) {
+        this.curso = crs;
+      }
+      this.getCurso = function () {
+        return this.curso;
+      }
+    }
+    //Define a class professor
+    function Professor() {
+      // Chama o método pai
+      Pessoa.call(this);
+      let matricula;
+      let area;
+      let lates;
+
+      this.setMatricula = function (mt) {
+        this.matricula = mt;
+      }
+      this.getMatricula = function () {
+        return this.matricula;
+      }
+
+      this.setArea = function (a) {
+        this.area = a;
+      }
+      this.getArea = function () {
+        return this.area;
+      }
+      this.setLates = function (lts) {
+        this.lates = lts;
+      }
+      this.getLates = function () {
+        return this.lates;
+      }
+    }
+
+
+
+
+    document.getElementById("aluno").addEventListener("click", selecionado1);
+    document.getElementById("prof").addEventListener("click", selecionado2);
+    document.getElementById("btnRst").addEventListener("click", () => {
+
+      document.getElementById("escolha").innerHTML = "";
+    });
+
+
+    function selecionado1() {
+
+      let div = '<div class="input-form" >';
+      div += '<label for="curso" class="form-label">Curso</label>';
+      div += '<input type="text" class="form-control" id="curso" placeholder="Curso">';
+      div += '<label for="matricula" class="form-label">matricula</label>';
+      div += '<input type="text" class="form-control" id="matricula" placeholder="matricula">';
+      '</div>';
+      document.getElementById("escolha").innerHTML = div;
+    }
+    function selecionado2() {
+
+      let div = '<div class="input-form" >';
+      div += '<label for="matricula" class="form-label">Matricula</label>';
+      div += '<input type="text" class="form-control" id="matricula" placeholder="matricula">';
+      div += '<label for="area" class="form-label">Área</label>';
+      div += '<input type="text" class="form-control" id="area" placeholder="area">';
+      div += '<label for="lates" class="form-label">Lates</label>';
+      div += '<input type="text" class="form-control" id="lates" placeholder="lates"></div>';
+      document.getElementById("escolha").innerHTML = div;
+    }
+
+    document.getElementById("btn").addEventListener("click", () => {
+
+      const tipo = document.querySelector('input[type=radio][name=tipo]:checked').value;
+      let result = "";
+      if (tipo === "prof") {
+
+        pr = new Professor();
+        pr.setNome(document.getElementById('nome').value);
+        pr.setEmail(document.getElementById('email').value);
+        pr.setDtNasc(document.getElementById('datanasc').value);
+        pr.setFixo(document.getElementById('fixo').value);
+        pr.setCelular(document.getElementById('cel').value);
+        pr.setMatricula(document.getElementById('matricula').value);
+        pr.setArea(document.getElementById('area').value);
+        pr.setLates(document.getElementById('lates').value);
+       
+        resultado(pr);
+
+      } else if (tipo === "aluno") {
+        al = new Aluno();
+        al.setNome(document.getElementById('nome').value);
+        al.setEmail(document.getElementById('email').value);
+        al.setDtNasc(document.getElementById('datanasc').value);
+        al.setFixo(document.getElementById('fixo').value);
+        al.setCelular(document.getElementById('cel').value);
+        al.setMatricula(document.getElementById('matricula').value);
+        al.setCurso(document.getElementById('curso').value);
+       
+        resultado(al);
+
+      }
+
+    });
+    function resultado(p) {
+       let vet = p.dtNasc;
+       vet = vet.split("-"); 
+      
+      let dt = vet[2]+"/"+vet[1]+"/"+vet[0];
+    
+      
+      if (!p.area) {
+        result = '<table class="table table-success table-striped">';
+        result += '<thead><tr><th colspan="3"><h3>Aluno</h3></th></tr>';
+        result += ' <tr><th scope="col">Matricula</th><th scope="col">Nome</th>';
+        result += '<th colspan="2" scope="col">Data Nascimento</th></tr></thead>';
+
+        result += '<tbody> <tr><th scope="col">' + p.matricula + '</th><th scope="col">' + p.nome + ' </th>';
+        result += '<th colspan="2" scope="col">' + dt + '</th></tr>';
+        result += '<tr><th colspan="3">Curso: ' + p.curso + '</th></tr><tr>';
+        result += '<th colspan="3">Telefone fixo: ' + p.fixo + '</th></tr>';
+        result += '<tr><th colspan="3">Telefone Celula ' + p.celular + '</th></tr></table>';
+      } else {
+        result = '<table class="table table-success table-striped">';
+        result += '<thead><tr><th colspan="3"><h3>Professor</h3></th>';
+        result += '</tr> <tr><th scope="col">Matricula</th><th scope="col">Nome </th>';
+        result += '<th colspan="2" scope="col">Data Nascimento</th></tr></thead>';
+        result += '</tr> <tbody><tr><th scope="col">'+ p.matricula + '</th><th scope="col">' + p.nome + ' </th>';
+        result += '<th colspan="2" scope="col">' + dt + '</th></tr>';
+
+
+        result += '<tr><th colspan="3">Área: ' + p.area + '</th>';
+        result +='<tr><th colspan="3">Lates: ' + p.lates + '</th></tr><tr>';
+        result += '<th colspan="3">Telefone fixo: ' + p.fixo + '</th></tr>';
+        result += '<tr><th colspan="3">Telefone Celular ' + p.celular + '</th></tr></table>';
+
+      }
+      console.log(document.getElementById('result').innerHTML = result);
+    }
+
+  </script>
+
+</body>
+
+</html>
+
+</div>
