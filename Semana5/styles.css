@@ -7,9 +7,10 @@
     margin-top: 50px;
     margin-bottom: 20px;
     width: 500px;
-    height: 550px;
+    height: 580px;
     border-radius: 8px;
     border: 1px solid rgb(3, 98, 149);
+    padding-bottom: 20px;
 }
 .total{
     display: flex;
@@ -28,20 +29,21 @@
     text-align: center;
     width: 180px;
     height: 60px;;
-    border: 1px solid black;
+    border: 1px solid #2e25a5;
+    color:#0521ac;
     border-radius: 8px;
     font-weight: bold;
-   font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 .h1_{
     margin-left: auto;
     margin-right: 103px;
     text-align: center;
     width: 190px;
-    color: #2901ae;
+    color:#0026ad;
 }
 .reflesh{
-    margin-top: 20px;
+    margin-top: 23px;
     margin-right: 20px;
     width: 25px;
     height: 25px;
@@ -52,6 +54,14 @@
     cursor: pointer;
 }
 .reflesh:active{
+    opacity: 0.5;
+
+}
+.mais:active{
+    opacity: 0.5;
+
+}
+.menos:active{
     opacity: 0.5;
 
 }
@@ -72,9 +82,9 @@
 .titulo{
     width: 180px;
     text-align: center;
-   
     font-size: 1.2rem;
     font-weight: bold;
+    color:#0026ad;
     padding: 0;
 }
 
@@ -84,7 +94,7 @@
     justify-content: center;
     flex-wrap: wrap;
     width: 180px;
-   
+ border-bottom: 80px; 
 
 }
 
@@ -98,22 +108,19 @@
 .menos{
     margin-top: 39px;
     margin-left: 30px;
-    width: 35px;
+    width: 34px;
     height: 35px;
-    
-
-    
+   
 }
 .mais{
     margin-top: 30px;
     margin-left: -5px;
-    width: 62px;
+    width: 50px;
     height: 50px;
-   
-}
+ }
 .mais,.menos:hover{
     cursor: pointer;
 }
-.mais,.menos:active{
-    
-}
+
+
+
