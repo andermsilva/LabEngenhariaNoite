@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link;
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&family=Ubuntu:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap"
+    rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="../CSS/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Semana 5</title>
+</head>
+
+<body>
+  <main class="mainIdex">
+    <nav>
+      <div class="title">
+        <div class="brdr">
+          <h1>Semana 5</h1>
+        </div>
+      </div>
+    </nav>
+    <section>
+      <div id="content" class="conteudo">
+
+      </div>
+
+    </section>
+
+    <script>
+
+      /*-------------------------------------- Fuções --------------------------------------*/
+      let somaHomens = 0;
+      let somaMulheres = 0;
+      let total = 0;
+
+
+      function addM() {
+        somaMulheres++;
+        divNum2.setAttribute('value', somaMulheres);
+
+        total = total + 1;
+        divNumT.setAttribute('value', total);
+      }
+      function lessM() {
+
+        if (somaMulheres > 0) {
+
+          somaMulheres--;
+          divNum2.setAttribute('value', somaMulheres);
+          total = total - 1;
+          divNumT.setAttribute('value', total);
+        }
+      }
+
+
+
+      function addH() {
+        somaHomens++;
+        divNum.setAttribute('value', somaHomens);
+        total = total + 1;
+        divNumT.setAttribute('value', total);
+      }
+      function lessH() {
+        if (somaHomens > 0) {
+          somaHomens--;
+          divNum.setAttribute('value', somaHomens);
+          total = total - 1;
+          divNumT.setAttribute('value', total);
+        }
+      }
+
+
+      /*------------------------------------- ######## --------------------------------------*/
+      let h1 = document.createElement('h1');
+      let content = document.createTextNode('Total');
+      h1.appendChild(content);
+      document.getElementById('content').appendChild(h1).setAttribute('class', 'h1_');
+      //ação de reset
+      let image = document.createElement('img');
+      image.src = '/Semana5/images/reflesh.png';
+      image.setAttribute('onclick', ' location.reload()');
+      document.getElementById('content').appendChild(image).setAttribute('class', 'reflesh');
+
+
+      let divTotal = document.createElement('div');
+      let divNumT = document.createElement('input');
+      divNumT.setAttribute('readonly', true);
+      divNumT.setAttribute('value', total);
+      divTotal.appendChild(divNumT).setAttribute('class', 'numero')
+      document.getElementById('content').appendChild(divTotal).setAttribute('class', 'total');
+
+      let divPicture = document.createElement('div');
+      let picture = document.createElement('img');
+      picture.src = '/Semana5/images/homem.png';
+      divPicture.appendChild(picture).setAttribute('class', 'img_homem');
+      document.getElementById('content').appendChild(divPicture).setAttribute('class', 'picture');
+
+      divPicture = document.createElement('div');
+      picture = document.createElement('img');
+      picture.src = '/Semana5/images/mulher.png';
+      divPicture.appendChild(picture).setAttribute('class', 'img_homem');
+      document.getElementById('content').appendChild(divPicture).setAttribute('class', 'picture');
+
+      let divScore = document.createElement('div');
+
+      //ação adicionar...
+      let divBtn = document.createElement('div');
+      image = document.createElement('img');
+      image.src = '/Semana5/images/mais.png';
+      image.setAttribute('onclick', 'addH();');
+
+      divBtn.appendChild(image).setAttribute('class', 'mais');
+      divScore.appendChild(divBtn).setAttribute('class', 'bts');
+
+      // ação subtrair...
+      divBtn = document.createElement('div');
+      image = document.createElement('img');
+      image.src = '/Semana5/images/menos.png';
+      image.setAttribute('onclick', 'lessH();');
+
+      divBtn.appendChild(image).setAttribute('class', 'menos');
+      divScore.appendChild(divBtn).setAttribute('class', 'bts');
+
+      let title = document.createElement('div');
+      title.textContent = "Homens";
+      divScore.appendChild(title).setAttribute('class', 'titulo');
+
+      divNum = document.createElement('input');
+      // divNum.setAttribute('readonly', true);
+
+
+      divNum.setAttribute('value', somaHomens);
+      divScore.appendChild(divNum).setAttribute('class', 'numero');
+      document.getElementById('content').appendChild(divScore).setAttribute('class', 'score');
+
+      //////====================================================================================////////
+      divScore = document.createElement('div');
+
+      //ação adicionar...
+      divBtn = document.createElement('div');
+      image = document.createElement('img');
+      image.src = '/Semana5/images/mais.png';
+
+      image.setAttribute('onclick', 'addM();');
+
+      divBtn.appendChild(image).setAttribute('class', 'mais');
+      divScore.appendChild(divBtn).setAttribute('class', 'bts');
+
+      // ação subtrair...
+      divBtn = document.createElement('div');
+      image = document.createElement('img');
+      image.src = '/Semana5/images/menos.png';
+      image.setAttribute('onclick', 'lessM();');
+
+      divBtn.appendChild(image).setAttribute('class', 'menos');
+      divScore.appendChild(divBtn).setAttribute('class', 'bts');
+
+      title = document.createElement('div');
+      title.textContent = "Mulheres";
+      divScore.appendChild(title).setAttribute('class', 'titulo');
+
+      divNum2 = document.createElement('input');
+      divNum2.setAttribute('readonly', true);
+
+      divNum2.setAttribute('value', somaMulheres);
+      divScore.appendChild(divNum2).setAttribute('class', 'numero');
+
+      document.getElementById('content').appendChild(divScore).setAttribute('class', 'score')
+
+    </script>
+    <a href="../index.html">Laboratorio de Engenharia de software</a><br />
+  </main>
+  <script src="../CSS/bootstrap-5.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
