@@ -212,7 +212,7 @@ for (let i = 19; i > 0; i--) {
       
       valor = parseFloat(inpNumero.value) + parseFloat(valor);
       
-      // inpNumero.value=0;
+      inpNumero.value=0;
       x = 0;
       console.log("valor2", parseFloat(valor));
     });
