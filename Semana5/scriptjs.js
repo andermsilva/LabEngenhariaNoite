@@ -76,7 +76,7 @@
 
 
              
-
+  
       let divPicture = document.createElement('div');
       let picture = document.createElement('img');
       picture.src = 'https://cdn-icons-png.flaticon.com/512/610/610120.png';
