@@ -4,6 +4,10 @@ import * as myClass from "./styles.js";
 let x = 0;
 let op = "";
 let valor = 0;
+let valor2 = 0;
+function digitar(event) {
+  if (!isNaN(parseFloat(event))) console.log(event.key);
+}
 const divCalc = document.getElementById("calculadora");
 Object.assign(divCalc.style, myClass.calc);
 
@@ -12,6 +16,8 @@ Object.assign(divTotal.style, myClass.total);
 
 const inpNumero = document.createElement("input");
 Object.assign(inpNumero.style, myClass.numero);
+inpNumero.setAttribute('readonly',true)
+inpNumero.addEventListener("keydown", digitar);
 
 divTotal.appendChild(inpNumero);
 divCalc.appendChild(divTotal);
@@ -26,13 +32,13 @@ for (let i = 19; i > 0; i--) {
     Object.assign(divBtn[i].style, myClass.btn0);
     Object.assign(divBtn[i].style, myClass.corEscuro);
     Object.assign(divBtn[i].style, myClass.hover);
-    
+
     divBtn[i].textContent = 0;
     divBtn[i].addEventListener("click", () => {
       inpNumero.value = divBtn[i].textContent;
       if (x == "0") x = "";
       x += divBtn[i].textContent;
-      
+
       inpNumero.value = parseFloat(x);
     });
   } else if (i == 19) {
@@ -44,19 +50,88 @@ for (let i = 19; i > 0; i--) {
     Object.assign(divBtn[i].style, myClass.btn);
     Object.assign(divBtn[i].style, myClass.corCinza);
     Object.assign(divBtn[i].style, myClass.hover);
-    
+
     divBtn[i].textContent = "+/-";
+
+    divBtn[i].addEventListener("click", () => {
+      console.log("antes ", op);
+
+      if (op != "") result();
+
+      op = divBtn[i].textContent;
+
+      console.log("Xx", x);
+      console.log("input", inpNumero.value);
+      console.log("valor1", parseFloat(valor));
+
+      valor = parseFloat(inpNumero.value) *(- 1);
+      
+        inpNumero.value = valor;
+    
+      console.log("valor2", parseFloat(valor));
+    });
+
+
   } else if (i == 17) {
     Object.assign(divBtn[i].style, myClass.btn);
     Object.assign(divBtn[i].style, myClass.corCinza);
     Object.assign(divBtn[i].style, myClass.hover);
     divBtn[i].textContent = "%";
+
+    divBtn[i].addEventListener("click", () => {
+      console.log("antes ", op);
+
+      //op = divBtn[i].textContent;
+      if (op == "+") {
+        inpNumero.value = (valor/100 )* inpNumero.value+valor;
+      }
+      if (op == "–") {
+        inpNumero.value = valor - (valor/100 ) * x;
+      }
+      if(op == "×") 
+       inpNumero.value = (valor/100 )* inpNumero.value;
+      if(op == "÷") 
+       inpNumero.value = (valor2*100 );
+
+      console.log("op", op);
+      console.log("Xx", x);
+     
+      console.log("input", inpNumero.value);
+      console.log("valor1", parseFloat(valor));
+
+     
+    
+      console.log("valor2", parseFloat(valor2));
+    });
+   
+  
+   console.log("valor2", parseFloat(valor));
+
+
   } else if (i == 16) {
     Object.assign(divBtn[i].style, myClass.btn);
     Object.assign(divBtn[i].style, myClass.corOp);
     Object.assign(divBtn[i].style, myClass.hover);
-    
+
     divBtn[i].textContent = "÷";
+
+    divBtn[i].addEventListener("click", () => {
+      if(op != "")
+      result();
+      console.log("antes ", op);
+      op = divBtn[i].textContent;
+
+      console.log("Xx", x);
+      console.log("input", inpNumero.value);
+      console.log("valor1", parseFloat(valor));
+
+      valor = parseFloat(inpNumero.value)/1;
+      valor2 = valor;
+      console.log("valor2", parseFloat(valor));
+      inpNumero.value = 0;
+      x = 0;
+    });
+
   } else if (i == 15) {
     Object.assign(divBtn[i].style, myClass.btn);
     Object.assign(divBtn[i].style, myClass.corEscuro);
@@ -65,19 +140,19 @@ for (let i = 19; i > 0; i--) {
     divBtn[i].addEventListener("click", () => {
       if (x == "0") x = "";
       x += divBtn[i].textContent;
-      
+
       inpNumero.value = parseFloat(x);
     });
   } else if (i == 14) {
     Object.assign(divBtn[i].style, myClass.btn);
     Object.assign(divBtn[i].style, myClass.corEscuro);
     Object.assign(divBtn[i].style, myClass.hover);
-    
+
     divBtn[i].textContent = 8;
     divBtn[i].addEventListener("click", () => {
       if (x == "0") x = "";
       x += divBtn[i].textContent;
-      
+
       inpNumero.value = parseFloat(x);
     });
   } else if (i == 13) {
@@ -89,15 +164,30 @@ for (let i = 19; i > 0; i--) {
       if (x == "0") x = "";
       inpNumero.value = divBtn[i].textContent;
       x += divBtn[i].textContent;
-      
+
       inpNumero.value = parseFloat(x);
     });
   } else if (i == 12) {
     Object.assign(divBtn[i].style, myClass.btn);
     Object.assign(divBtn[i].style, myClass.corOp);
     Object.assign(divBtn[i].style, myClass.hover);
-    
     divBtn[i].textContent = "×";
+
+    divBtn[i].addEventListener("click", () => {
+      if (op != "") result();
+      console.log("antes ", op);
+      op = divBtn[i].textContent;
+
+      console.log("Xx", x);
+      console.log("input", inpNumero.value);
+      console.log("valor1", parseFloat(valor));
+
+      valor = parseFloat(inpNumero.value) * 1;
+
+      inpNumero.value = 0;
+      x = 0;
+      console.log("valor2", parseFloat(valor));
+    });
   } else if (i == 11) {
     Object.assign(divBtn[i].style, myClass.btn);
     Object.assign(divBtn[i].style, myClass.corEscuro);
@@ -107,56 +197,59 @@ for (let i = 19; i > 0; i--) {
       if (x == "0") x = "";
       inpNumero.value = divBtn[i].textContent;
       x += divBtn[i].textContent;
-      
+
       inpNumero.value = parseFloat(x);
     });
   } else if (i == 10) {
     Object.assign(divBtn[i].style, myClass.btn);
     Object.assign(divBtn[i].style, myClass.corEscuro);
     Object.assign(divBtn[i].style, myClass.hover);
-    
+
     divBtn[i].textContent = 5;
     divBtn[i].addEventListener("click", () => {
       if (x == "0") x = "";
       inpNumero.value = divBtn[i].textContent;
       x += divBtn[i].textContent;
-      
+
       inpNumero.value = parseFloat(x);
     });
   } else if (i == 9) {
     Object.assign(divBtn[i].style, myClass.btn);
     Object.assign(divBtn[i].style, myClass.corEscuro);
     Object.assign(divBtn[i].style, myClass.hover);
-    
+
     divBtn[i].textContent = 6;
     divBtn[i].addEventListener("click", () => {
       inpNumero.value = divBtn[i].textContent;
       if (x == "0") x = "";
       x += divBtn[i].textContent;
-      
+
       inpNumero.value = parseFloat(x);
     });
   } else if (i == 8) {
     //subitração
-    
+
     Object.assign(divBtn[i].style, myClass.btn);
     Object.assign(divBtn[i].style, myClass.corOp);
     Object.assign(divBtn[i].style, myClass.hover);
-    
+
     divBtn[i].textContent = "–";
-    
+
     divBtn[i].addEventListener("click", () => {
+      if(op != "")
+        result();
+      console.log("antes ", op);
       op = divBtn[i].textContent;
-      
+
       console.log("Xx", x);
       console.log("input", inpNumero.value);
       console.log("valor1", parseFloat(valor));
-      
+
       valor = parseFloat(inpNumero.value) - parseFloat(valor);
-      
+
+      console.log("valor2", parseFloat(valor));
       inpNumero.value = 0;
       x = 0;
-      console.log("valor2", parseFloat(valor));
     });
   } else if (i == 7) {
     Object.assign(divBtn[i].style, myClass.btn);
@@ -166,11 +259,15 @@ for (let i = 19; i > 0; i--) {
     divBtn[i].addEventListener("click", () => {
       inpNumero.value = divBtn[i].textContent;
       if (x == "0") x = "";
-      
+
       x += divBtn[i].textContent;
       console.log("ponto ", x);
       inpNumero.value = parseFloat(x);
     });
+
+    
+
+
   } else if (i == 6) {
     Object.assign(divBtn[i].style, myClass.btn);
     Object.assign(divBtn[i].style, myClass.corEscuro);
@@ -180,7 +277,7 @@ for (let i = 19; i > 0; i--) {
       if (x == "0") x = "";
       inpNumero.value = divBtn[i].textContent;
       x += divBtn[i].textContent;
-      
+
       inpNumero.value = parseFloat(x);
     });
   } else if (i == 5) {
@@ -192,29 +289,32 @@ for (let i = 19; i > 0; i--) {
       if (x == "0") x = "";
       inpNumero.value = divBtn[i].textContent;
       x += divBtn[i].textContent;
-      
+
       inpNumero.value = parseFloat(x);
     });
   } else if (i == 4) {
     //Adicção
-    
+
     Object.assign(divBtn[i].style, myClass.btn);
     Object.assign(divBtn[i].style, myClass.corOp);
     Object.assign(divBtn[i].style, myClass.hover);
     divBtn[i].textContent = "+";
-    
+
     divBtn[i].addEventListener("click", () => {
+      if(op != "")
+      result();
+      console.log("antes ", op);
       op = divBtn[i].textContent;
-      
+
       console.log("Xx", x);
       console.log("input", inpNumero.value);
       console.log("valor1", parseFloat(valor));
-      
+
       valor = parseFloat(inpNumero.value) + parseFloat(valor);
-      
-      inpNumero.value=0;
-      x = 0;
+      valor2 = valor;
       console.log("valor2", parseFloat(valor));
+      inpNumero.value = 0;
+      x = 0;
     });
   } else if (i == 2) {
     Object.assign(divBtn[i].style, myClass.btn);
@@ -231,53 +331,57 @@ for (let i = 19; i > 0; i--) {
     Object.assign(divBtn[i].style, myClass.corOp);
     Object.assign(divBtn[i].style, myClass.hover);
     divBtn[i].textContent = "=";
-    
-    divBtn[i].addEventListener("click", () => {
-      console.log(op);
-      if (op == "+")
-      inpNumero.value = parseFloat(inpNumero.value) + parseFloat(valor);
-    
-    if (op == "–") {
-      inpNumero.value = parseFloat(valor) - parseFloat(inpNumero.value);
-    }
-    
-    op = "";
-    valor = 0;
-    x = 0;
-  });
-}
 
-divGrid.appendChild(divBtn[i]);
+    divBtn[i].addEventListener("click", result);
+  }
+
+  divGrid.appendChild(divBtn[i]);
 } //final do loop
-console.log(x);
-
-/* divBtn[4].addEventListener("click", () => {
-  
-  op =  divBtn[4].textContent;
-  
-  console.log("Xx",x);
-  console.log("input",inpNumero.value)
-  console.log("valor1",parseFloat(valor))
-  
-  valor = parseFloat(inpNumero.value) + parseFloat(valor);
-  
-  inpNumero.value=0;
-  x = 0;
-  console.log("valor2",parseFloat(valor))
-  
-}); */
 
 divBtn[19].addEventListener("click", () => {
   inpNumero.value = 0;
   x = 0;
   valor = 0;
   op = "";
-  
+
   //inpNumero.value =  valor ;
 });
 
-console.log(valor);
 divCalc.appendChild(divGrid);
 
-//}
+function result() {
+  console.log(op);
+  if (op == "+")
+    inpNumero.value = parseFloat(inpNumero.value) + parseFloat(valor);
 
+  if (op == "–") {
+    inpNumero.value = parseFloat(valor) - parseFloat(inpNumero.value);
+  }
+  if (op == "×") {
+    inpNumero.value = parseFloat(valor) * parseFloat(inpNumero.value);
+  }
+  if (op == "÷") {
+    if (parseFloat(inpNumero.value) == 0)
+      inpNumero.value = "ERROR.. Dision per 0".style.fontSize = "1.0rem";
+    else inpNumero.value = parseFloat(valor) / parseFloat(inpNumero.value);
+  }
+
+  op = "";
+  valor = 0;
+  x = 0;
+}
+/* addEventListener('keydown', function(e) {
+  //console.log(e.keyCode)
+  if(e.key >= 0 && e.key <=9 ){
+
+    console.log("valor ",valor);
+    inpNumero.value += e.key;
+
+  }else{
+    valor = parseFloat(inpNumero.value);
+    inpNumero.value = 0;
+  }
+}); */
+
+
+//}
