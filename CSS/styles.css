@@ -191,3 +191,23 @@ table{
 #escolha{
     margin-top: 20pxpx;
 }
+.banner{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    align-items: center;
+    border-radius: 6px;
+    background-color: #62117f;
+    width: 680px;
+    height: 75px;
+    font-size: 1.5rem;
+}
+.texto{
+    margin-left: auto;
+    margin-right: auto;
+    width: 385px;
+color: #07e0ec;
+   
+    justify-content: center;
+}

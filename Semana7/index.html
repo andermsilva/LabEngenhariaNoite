@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link;
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&family=Ubuntu:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="/CSS/styles.css" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Laboratorio de Engenharia de software</title>
+
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        let x = 0;
+
+        const write = () => {
+            let frase = "Venha Estudar na Fatec";
+            if (x <= frase.length) {
+                x += 1;
+                return frase.substring(0, x);
+            } else {
+                x = 0;
+            }
+        }
+
+        const Elemento = ({ mostrar }) => {
+            return (
+                <main className="mainIdex">
+                    <nav>
+                        <div className="title">
+                            <div className="brdr">
+                                <h1>Semana 7</h1>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <section >
+                        <div className="banner">
+                            <h2 className="texto">
+                                {mostrar}
+                            </h2>
+                        </div>
+
+                    </section>
+                    <br />
+                    <br />
+
+
+
+                </main>
+            );
+
+
+        }
+
+
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+
+        const imprimir = () => {
+            root.render(
+                <Elemento mostrar={write()} />);
+        }
+
+        setInterval(imprimir, 150);
+
+    </script>
+
+
+    <script src="../CSS/bootstrap-5.3.1/js/bootstrap.bundle.min.js"></script>
+
+    <a href="../index.html">Laboratorio de Engenharia de software</a><br />
+
+</body>
+
+</html>

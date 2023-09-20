@@ -1,11 +1,9 @@
 import * as myClass from "./styles.js";
 
-//window.onload = function test()  {
 let x = 0;
 let op = "";
 let valor = 0;
-let valor2 = 0;
-function digitar(event) {
+let valor2 = 0;function digitar(event) {
   if (!isNaN(parseFloat(event))) console.log(event.key);
 }
 const divCalc = document.getElementById("calculadora");
@@ -54,21 +52,16 @@ for (let i = 19; i > 0; i--) {
     divBtn[i].textContent = "+/-";
 
     divBtn[i].addEventListener("click", () => {
-      console.log("antes ", op);
-
+    
       if (op != "") result();
 
       op = divBtn[i].textContent;
-
-      console.log("Xx", x);
-      console.log("input", inpNumero.value);
-      console.log("valor1", parseFloat(valor));
 
       valor = parseFloat(inpNumero.value) *(- 1);
       
         inpNumero.value = valor;
     
-      console.log("valor2", parseFloat(valor));
+      
     });
 
 
@@ -79,7 +72,7 @@ for (let i = 19; i > 0; i--) {
     divBtn[i].textContent = "%";
 
     divBtn[i].addEventListener("click", () => {
-      console.log("antes ", op);
+   
 
       //op = divBtn[i].textContent;
       if (op == "+") {
@@ -93,20 +86,9 @@ for (let i = 19; i > 0; i--) {
       if(op == "÷") 
        inpNumero.value = (valor2*100 );
 
-      console.log("op", op);
-      console.log("Xx", x);
-     
-      console.log("input", inpNumero.value);
-      console.log("valor1", parseFloat(valor));
-
-     
     
-      console.log("valor2", parseFloat(valor2));
     });
    
-  
-   console.log("valor2", parseFloat(valor));
-
 
   } else if (i == 16) {
     Object.assign(divBtn[i].style, myClass.btn);
@@ -118,16 +100,12 @@ for (let i = 19; i > 0; i--) {
     divBtn[i].addEventListener("click", () => {
       if(op != "")
       result();
-      console.log("antes ", op);
+     
       op = divBtn[i].textContent;
-
-      console.log("Xx", x);
-      console.log("input", inpNumero.value);
-      console.log("valor1", parseFloat(valor));
 
       valor = parseFloat(inpNumero.value)/1;
       valor2 = valor;
-      console.log("valor2", parseFloat(valor));
+      
       inpNumero.value = 0;
       x = 0;
     });
@@ -175,18 +153,14 @@ for (let i = 19; i > 0; i--) {
 
     divBtn[i].addEventListener("click", () => {
       if (op != "") result();
-      console.log("antes ", op);
+     
       op = divBtn[i].textContent;
-
-      console.log("Xx", x);
-      console.log("input", inpNumero.value);
-      console.log("valor1", parseFloat(valor));
 
       valor = parseFloat(inpNumero.value) * 1;
 
       inpNumero.value = 0;
       x = 0;
-      console.log("valor2", parseFloat(valor));
+     
     });
   } else if (i == 11) {
     Object.assign(divBtn[i].style, myClass.btn);
@@ -238,16 +212,11 @@ for (let i = 19; i > 0; i--) {
     divBtn[i].addEventListener("click", () => {
       if(op != "")
         result();
-      console.log("antes ", op);
+      
       op = divBtn[i].textContent;
-
-      console.log("Xx", x);
-      console.log("input", inpNumero.value);
-      console.log("valor1", parseFloat(valor));
 
       valor = parseFloat(inpNumero.value) - parseFloat(valor);
 
-      console.log("valor2", parseFloat(valor));
       inpNumero.value = 0;
       x = 0;
     });
@@ -261,7 +230,7 @@ for (let i = 19; i > 0; i--) {
       if (x == "0") x = "";
 
       x += divBtn[i].textContent;
-      console.log("ponto ", x);
+    
       inpNumero.value = parseFloat(x);
     });
 
@@ -301,18 +270,12 @@ for (let i = 19; i > 0; i--) {
     divBtn[i].textContent = "+";
 
     divBtn[i].addEventListener("click", () => {
-      if(op != "")
-      result();
-      console.log("antes ", op);
+      if(op != "") result();
+     
       op = divBtn[i].textContent;
-
-      console.log("Xx", x);
-      console.log("input", inpNumero.value);
-      console.log("valor1", parseFloat(valor));
-
       valor = parseFloat(inpNumero.value) + parseFloat(valor);
       valor2 = valor;
-      console.log("valor2", parseFloat(valor));
+      
       inpNumero.value = 0;
       x = 0;
     });
@@ -322,7 +285,7 @@ for (let i = 19; i > 0; i--) {
     Object.assign(divBtn[i].style, myClass.hover);
     divBtn[i].textContent = ",";
     divBtn[i].addEventListener("click", () => {
-      console.log(x);
+      
       x += ".";
       inpNumero.value = x;
     });
@@ -350,7 +313,7 @@ divBtn[19].addEventListener("click", () => {
 divCalc.appendChild(divGrid);
 
 function result() {
-  console.log(op);
+ 
   if (op == "+")
     inpNumero.value = parseFloat(inpNumero.value) + parseFloat(valor);
 
