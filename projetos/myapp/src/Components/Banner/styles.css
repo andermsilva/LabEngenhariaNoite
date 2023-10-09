@@ -29,7 +29,7 @@ nav {
 
 .brdr {
     border: #071b99 1px solid;
-    
+
 }
 
 section {
@@ -109,24 +109,26 @@ button {
     border: 1px solid #071b99;
 }
 
-#date{
+#date {
     text-align: center;
     border: 1px solid rgb(152, 6, 231);
     font-size: 1.2rem;
     font-weight: 700;
-      background-color: #5000c0;
-      color: #c3e3f2;
+    background-color: #5000c0;
+    color: #c3e3f2;
     padding: 10px;
     width: 400px;
 
     margin-left: auto;
     margin-right: auto;
 }
-.relogio{
+
+.relogio {
     border: 1px solid rgb(152, 6, 231);
     border-radius: 8px;
-    text-align: center;;
-    width:150px;
+    text-align: center;
+    ;
+    width: 150px;
     background-color: #68009c;
     color: #c3e3f2;
 }
@@ -162,36 +164,40 @@ button {
     border: 1px solid black;
     border-radius: 8px;
 }
-.input-form{
-    
+
+.input-form {
+
     width: 480px;
 }
-.item-form{
-  
-width: 60%;
+
+.item-form {
+
+    width: 60%;
     display: flex;
     padding: 15px;
 }
 
-.mainIndex{
+.mainIndex {
     margin-top: 10px;
     display: flex;
-    width:80%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     justify-content: space-around;
 }
 
-table{
-  width: 90%;
-    border:1px solid;
+table {
+    width: 90%;
+    border: 1px solid;
     height: 30px;
-   
+
 }
-#escolha{
+
+#escolha {
     margin-top: 20pxpx;
 }
-.banner{
+
+.banner {
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -199,15 +205,19 @@ table{
     align-items: center;
     border-radius: 6px;
     background-color: #62117f;
-    width: 680px;
+    width: 700px;
     height: 75px;
     font-size: 1.5rem;
 }
-.texto{
+
+.texto {
     margin-left: auto;
     margin-right: auto;
-    width: 385px;
-color: #07e0ec;
-   
+    text-align: center;
+    width: 80%;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #07e0ec;
+
     justify-content: center;
 }
