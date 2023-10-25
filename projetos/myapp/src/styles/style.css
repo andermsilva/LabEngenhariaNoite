@@ -1,0 +1,227 @@
+body {
+    font-family: Roboto, Ubuntu;
+    font-size: 0.95rem;
+
+}
+
+main {
+    width: 90%;
+background-color: #111df1;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.title {
+    margin-top: 18px;
+    margin-left: 8px;
+    padding: 2px;
+    width: 80%;
+    color: #034d57;
+    text-align: center;
+    border: #071b99 1px solid;
+}
+.sub-title {
+    margin-top: 18px;
+    margin-left:auto;
+    margin-right: auto;
+    padding: 2px;
+    width: 80%;
+    color: #034d57;
+    text-align: center;
+    border: #071b99 1px solid;
+}
+
+.brdr {
+    border: #071b99 1px solid;
+    
+}
+
+section {
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu {
+    width: fit-content;
+    list-style: none;
+}
+
+.limenu {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    border-bottom: #14737f 1px solid;
+}
+
+a {
+    text-decoration: none;
+    color: #071b99;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #7400af;
+
+
+}
+
+.listOrder {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+
+}
+
+input {
+    width: 200px;
+    height: 35px;
+    border-radius: 8px;
+    border: 1px solid #07a4ec;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: #286991;
+    font-size: 1.2rem;
+}
+
+input:focus {
+    outline: none;
+
+}
+
+label {
+    color: #696969;
+    font-weight: 600;
+}
+
+button {
+    width: 90px;
+    height: 45px;
+
+    border: 1px solid #012086;
+    border-radius: 8px;
+    background-color: #111df1;
+    color: aliceblue;
+    font-size: 1.1rem;
+}
+
+.item-list {
+    font-size: 1.12rem;
+
+    padding: 5px;
+    border: 1px solid #071b99;
+}
+
+#date{
+    text-align: center;
+    border: 1px solid rgb(152, 6, 231);
+    font-size: 1.2rem;
+    font-weight: 700;
+      background-color: #5000c0;
+      color: #c3e3f2;
+    padding: 10px;
+    width: 400px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+.relogio{
+    border: 1px solid rgb(152, 6, 231);
+    border-radius: 8px;
+    text-align: center;;
+    width:150px;
+    background-color: #68009c;
+    color: #c3e3f2;
+}
+
+
+#obrigatorio {
+    color: #dc0f04;
+    font-weight: 600;
+}
+
+.item-session {
+
+    border-radius: 8px;
+}
+
+#resposta, .item-session {
+
+    padding: 10px;
+    width: 400px;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.item-certo {
+    color: #071b99;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.item-error {
+    color: #c91818;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+.input-form{
+    
+    width: 480px;
+}
+.item-form{
+  
+width: 60%;
+    display: flex;
+    padding: 15px;
+}
+
+.mainIndex{
+    margin-top: 10px;
+    display: flex;
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-around;
+}
+
+table{
+  width: 90%;
+    border:1px solid;
+    height: 30px;
+   
+}
+#escolha{
+    margin-top: 20pxpx;
+}
+.banner{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    align-items: center;
+    border-radius: 6px;
+    background-color: #62117f;
+    width: 680px;
+    height: 75px;
+    font-size: 1.5rem;
+}
+.texto{
+    margin-left: auto;
+    margin-right: auto;
+    width: 385px;
+color: #07e0ec;
+   
+    justify-content: center;
+}
+.lista{
+    width: 500px;
+}

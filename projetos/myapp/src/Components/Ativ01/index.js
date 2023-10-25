@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { React} from "react";
 import { Link } from "react-router-dom";
 import Relogio from "../Relogio";
 import Banner from "../Banner";
@@ -9,12 +9,14 @@ function Ativ01() {
 
   return (
     <>
-      <h1>Atividade 01</h1>
+    
+      <h2 className="sub-title">Atividade 01</h2>
       <div>
         <Relogio />
         <Banner conteudo={"Venha conhecer a FATEC"} />
-      </div>
+        <br />
       <Link to="/">Home</Link>
+      </div>
     </>
   );
 }

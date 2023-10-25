@@ -3,19 +3,20 @@ import "./styles.css";
 
 const Banner = ({ conteudo }) => {
   const [frase, setFrase] = useState("");
-
-  const escrever = (texto, x = 0) => {
+  useEffect(() => {
+  
+    let x = 0;
+  const escrever = (texto) => {
     if (x <= texto.length) {
-      setFrase(texto.slice(0, x + 1));
+      x = x + 1;
+      
+      setFrase(texto.slice(0, x ));
     } else {
       x = 0;
     }
-    setTimeout(() => escrever(texto, x + 1),400);
   };
-
-  useEffect(() => {
-    setTimeout(() => escrever(conteudo),100);
-  }, []);
+    setInterval(() => escrever(conteudo),400);
+ },[]);
 
   return (
     <section>
