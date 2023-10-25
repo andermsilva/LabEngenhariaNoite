@@ -1,8 +1,12 @@
+
+import {useEffect} from 'react';
 import "./App.css";
 import Banner from "./Components/Banner/Banner";
 import Relogio from "./Components/Relogio/Relogio";
+import MyRoutes from './minhasRotas.js';
+
 /* oo-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o */
-let x = 0;
+/* let x = 0;
 function frase() {
 let texto = "Venha Conhecer a FATEC";
 
@@ -20,14 +24,26 @@ let texto = "Venha Conhecer a FATEC";
 
 setInterval(()=>{frase()},145);
 
-/* o-o-o-o-o---o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o--o- */
 
-function App() {
+const teste =()=>{
+  for (let index = 0; index < 10; index++) {
+   let element = index;
+   console.log(index)
+   return element;
+  }
 
+} */
 
+function App({t}) {
+
+ /*  useEffect(()=>{
+    setInterval(teste(),200);
+  
+  },[]); */
+ // teste();
   return (
     <>
-      <nav>
+     {/*  <nav>
         <div className="title">
           <div className="brdr">
             <h1> React </h1>
@@ -37,8 +53,10 @@ function App() {
       <br />
       <Relogio />
       <br />
-      <Banner  />
-      <br />
+      <Banner mostrar = {t} />
+      <br /> */}
+     
+ <MyRoutes/>
     </>
   );
 }
