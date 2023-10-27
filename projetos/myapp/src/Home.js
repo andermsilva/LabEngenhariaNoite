@@ -12,7 +12,7 @@ const Home = () => {
         </div>
         <ul className="lista">
           <li>
-            <Link to="/Ativ01">Atividade</Link>
+            <Link to="/Ativ01">Atividade 01</Link>
           </li>
           <li>
             <Link to="/Ativ02">Atividade 02</Link>

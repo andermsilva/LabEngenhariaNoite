@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import Contador from '../Contador';
 function Ativ02() {
+
+
 
     return(
 
         <>
-        <h1>Atividade 02</h1>
+        <h2 className="sub-title">Atividade 02</h2>
 
-        <h2>sdfsdfdsfsdfdsfsdfdsfsd</h2>
+       <Contador/>
         <Link to='/'>Home</Link>
         </>
     );
