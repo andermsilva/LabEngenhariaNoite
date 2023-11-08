@@ -225,3 +225,26 @@ color: #07e0ec;
 .lista{
     width: 500px;
 }
+.foto{
+    width: 400px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+}
+h1{
+ text-align:center;
+}
+.sessao{
+
+    display: flex;
+    justify-content: center;
+   
+}
+.container{
+    width: 100%;
+    margin-top: auto;
+    margin-right: auto;
+   
+}
