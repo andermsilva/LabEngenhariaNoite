@@ -1,7 +1,7 @@
-#calc {
+.calc {
     display: flex;
     justify-content: space-around;
-
+    background-color: #5b51e6;
     margin-left: auto;
     margin-right: auto;
     flex-wrap: wrap;
@@ -17,10 +17,12 @@
 .numero {
     display: flex;
     justify-content: end;
+    margin-top: 8px;
     align-items: center;
-    text-align: center;
-    width: 100%;
-    height: 60px;
+    text-align: end;
+    background-color: aliceblue;
+    width: 96%;
+    height: 80px;
     padding-right: 8px;
     border: 1px solid #5b51e6;
     color: #0521ac;
@@ -28,6 +30,13 @@
     font-weight: bold;
     font-size: 1.7rem;
 }
+/* input{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width:96%;
+    height: 80px;
+} */
 
 .grid {
     display: flex;
@@ -44,32 +53,38 @@
 }
 
 .btn {
-    
+
     width: 85px;
     height: 85px;
     background-color: white;
-    border-radius: 100%;
+    /*  border-radius: 100%; */
 
 }
-.btn:hover,.btn0{
+
+.btn:hover, .btn0 {
     cursor: pointer;
 }
-.btn:active{
+
+.btn:active {
     opacity: 0.5;
 }
-.btn0:active{
-opacity: 0.5;
+
+.btn0:active {
+    opacity: 0.5;
 }
+
 .corCinza {
     background-color: #c9bdbd;
     display: flex;
-    justify-content:space-evenly;
+    color: #434343;
+    justify-content: space-evenly;
     align-items: center;
     font-size: 1.9rem;
     font-weight: 700;
 }
+
 .corEscuro {
-    background-color: rgb(119, 108, 108);
+    background-color: #776c6c;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,6 +92,7 @@ opacity: 0.5;
     font-weight: 700;
     color: white;
 }
+
 .corOp {
     background-color: rgb(250, 150, 27);
     display: flex;
@@ -92,8 +108,8 @@ opacity: 0.5;
     width: 190px;
     height: 85px;
 
-    border-radius: 40px;
-    
+    border-radius: 8px;
+
 }
 
 
@@ -104,104 +120,10 @@ opacity: 0.5;
     margin-top: 25px;
 
     width: 90%;
-    height: 50px;
+    height: 60px;
 
 
 }
-
-.h1_ {
-    margin-left: auto;
-    margin-right: 103px;
-    text-align: center;
-    width: 190px;
-    color: #0026ad;
-}
-
-.reflesh {
-    margin-top: 23px;
-    margin-right: 20px;
-    width: 25px;
-    height: 25px;
-
-    z-index: 10;
-}
-
-.reflesh:hover {
-    cursor: pointer;
-}
-
-.reflesh:active {
-    opacity: 0.5;
-
-}
-
-.mais:active {
-    opacity: 0.5;
-
-}
-
-.menos:active {
-    opacity: 0.5;
-
-}
-
-.picture {
-    /* border: 1px solid black; */
-    width: 180px;
-    height: 190px;
-}
-
-.img_homem {
-    width: 180px;
-    height: 190px;
-}
-
-.img_mulher {
-    width: 180px;
-    height: 190px;
-}
-
-.titulo {
-    width: 180px;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #0026ad;
-    padding: 0;
-}
-
-
-.score {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 180px;
-    border-bottom: 80px;
-
-}
-
-
-
-.bts {
-
-    width: 60px;
-}
-
-.menos {
-    margin-top: 39px;
-    margin-left: 30px;
-    width: 34px;
-    height: 35px;
-
-}
-
-.mais {
-    margin-top: 30px;
-    margin-left: -5px;
-    width: 50px;
-    height: 50px;
-}
-
-.mais, .menos:hover {
-    cursor: pointer;
+input{
+    text-align: end;
 }
