@@ -263,7 +263,6 @@ for (let i = 19; i > 0; i--) {
     });
   } else if (i == 4) {
     //Adicção
-
     Object.assign(divBtn[i].style, myClass.btn);
     Object.assign(divBtn[i].style, myClass.corOp);
     Object.assign(divBtn[i].style, myClass.hover);
