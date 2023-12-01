@@ -128,3 +128,6 @@ span{
 input{
     text-align: end;
 }
+.alinhamento-texto{
+    text-align: center;
+}
